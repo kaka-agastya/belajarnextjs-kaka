@@ -1,6 +1,7 @@
 'use client';
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
+import { Link, Element } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { i } from "framer-motion/client";
 
@@ -15,11 +16,11 @@ export default function Home() {
         transition={{ duration: 1 }}
       >
         <Navbar/>
-        <h1 className="text-4xl sm:text-6xl font-bold">
+        <h1 className="text-4xl sm:text-6xl font-bold typing">
           Welcome to My Portfolio
         </h1>
         <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400">
-          Hi, I'm [Your Name], a passionate web developer.
+          Hi, I'm Kaka Agastya Herlambang Wahyudi, a passionate web developer.
         </p>
         <motion.div
           className="mt-4"
@@ -29,7 +30,14 @@ export default function Home() {
             href="#about"
             className="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700"
           >
+          <Link
+            to="contact" // Target ID dari elemen yang ingin digulirkan
+            smooth={true} // Aktifkan scroll halus
+            duration={500} // Durasi scroll
+            className="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700"
+          >
             Learn More
+          </Link>
           </a>
         </motion.div>
       </motion.section>
@@ -109,7 +117,7 @@ export default function Home() {
         transition={{ duration: 1 }}
       >
         <p className="text-gray-600 dark:text-gray-400">
-          © 2024 [Your Name]. All rights reserved.
+          © 2024 Kaka Agastya Herlambang Wahyudi. All rights reserved.
         </p>
       </motion.footer>
     </div>
