@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import { Link, Element } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { i } from "framer-motion/client";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export default function Home() {
   return (
@@ -16,9 +17,16 @@ export default function Home() {
         transition={{ duration: 1 }}
       >
         <Navbar/>
+        <ThemeSwitcher/>
+        <Link
+            to="contact" // Target ID dari elemen yang ingin digulirkan
+            smooth={true} // Aktifkan scroll halus
+            duration={1000} // Durasi scroll
+          >
         <h1 className="text-4xl sm:text-6xl font-bold typing">
           Welcome to My Portfolio
         </h1>
+        </Link>
         <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400">
           Hi, I'm Kaka Agastya Herlambang Wahyudi, a passionate web developer.
         </p>
@@ -30,14 +38,7 @@ export default function Home() {
             href="#about"
             className="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700"
           >
-          <Link
-            to="contact" // Target ID dari elemen yang ingin digulirkan
-            smooth={true} // Aktifkan scroll halus
-            duration={500} // Durasi scroll
-            className="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700"
-          >
             Learn More
-          </Link>
           </a>
         </motion.div>
       </motion.section>
