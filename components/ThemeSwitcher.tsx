@@ -44,11 +44,11 @@ export default function ThemeSwitcher() {
           className={`${
             isDarkMode ? 'translate-x-5' : 'translate-x-1'
           } inline-block w-4 h-4 transform bg-white rounded-full`}
-          animate={{ x: isDarkMode ? 20 : 0 }} // Atur posisi
+          animate={{ x: isDarkMode ? 22 : 5 }} // Atur posisi
           transition={{
             type: 'spring',
-            stiffness: 300,
-            damping: 30,
+            stiffness: 150,
+            damping: 40,
           }}
         />
       </Switch>

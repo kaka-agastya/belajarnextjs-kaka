@@ -5,6 +5,7 @@ import { Link, Element } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { i } from "framer-motion/client";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import Typewriter from "typewriter-effect";
 
 export default function Home() {
   return (
@@ -21,10 +22,18 @@ export default function Home() {
         <Link
             to="contact" // Target ID dari elemen yang ingin digulirkan
             smooth={true} // Aktifkan scroll halus
-            duration={1000} // Durasi scroll
+            duration={5000} // Durasi scroll
           >
         <h1 className="text-4xl sm:text-6xl font-bold typing">
-          Welcome to My Portfolio
+        <Typewriter
+              options={{
+                strings: [
+                  "Welcome to My Portfolio",
+                ],
+                autoStart: true,
+                loop: true,
+              }}
+            />
         </h1>
         </Link>
         <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400">
@@ -55,13 +64,16 @@ export default function Home() {
         <p className="max-w-2xl text-center text-gray-600 dark:text-gray-400">
           I'm a web developer specializing in creating dynamic and user-friendly web applications using modern technologies like React, Next.js, and Tailwind CSS.
         </p>
+        <div className="relative w-[200px] h-[200px]">
         <Image
-          src="/about-image.jpg"
-          alt="About me"
-          width={200}
-          height={200}
-          className="rounded-full"
-        />
+           src="/images/B.png"
+           alt="About Me"
+           width={200}    
+           height={200}
+           className="rounded-full transition-all duration-300 dark:invert"
+  />
+</div>
+
       </motion.section>
 
       {/* Projects Section */}

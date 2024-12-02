@@ -25,7 +25,8 @@
     "react-scroll": "^1.9.0",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
-    "tailwindcss-radix": "^3.0.5"
+    "tailwindcss-radix": "^3.0.5",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@types/node": "^20",
