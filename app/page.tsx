@@ -8,6 +8,23 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import Typewriter from "typewriter-effect";
 
 export default function Home() {
+  const timelineItems = [
+    {
+      title: "Food Server",
+      description: "KIA - Jun 2020 to Mar 2022",
+      side: "left",
+    },
+    {
+      title: "Sales Associate",
+      description: "Maximus Exidis - May 2022 to May 2023",
+      side: "right",
+    },
+    {
+      title: "Tutor",
+      description: "CFE CA - Dec 2023 to Present",
+      side: "left",
+    },
+  ];
   return (
     <div className="min-h-screen p-8 sm:p-20 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white">
       {/* Home Section */}
@@ -70,11 +87,50 @@ export default function Home() {
            alt="About Me"
            width={200}    
            height={200}
-           className="rounded-full transition-all duration-300 dark:invert"
-  />
-</div>
+           className="rounded-full transition-all duration-300 dark:invert"/>
+        </div>
+        <motion.section
+  id="timeline"
+  className="min-h-screen flex flex-col items-center justify-center px-6"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.3 }}
+>
+  <h2 className="text-3xl font-bold mb-6">Experience Timeline</h2>
+  <div className="relative w-full max-w-xl mx-auto">
+    {/* Garis Tengah Timeline */}
+    <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-gray-300 dark:bg-gray-600"></div>
+    {/* Timeline Items */}
+    {timelineItems.map((item, index) => (
+  <motion.div
+    key={`timeline-item-${index}`}
+    className={`relative flex items-center gap-4 mb-20 ${item.side === "left" ? "flex-row-reverse" : ""}`}
+    initial={{ opacity: 0, y: 50 }} // Mulai dari posisi bawah dan transparan
+    whileInView={{ opacity: 1, y: 0 }} // Muncul dan bergerak ke posisi normal
+    viewport={{ once: false, amount: 0.3 }} // Animasi akan dipicu ulang saat scroll
+    transition={{
+      delay: index * 0.3, // Animasi item berikutnya tertunda
+      duration: 0.6,
+      ease: "easeOut",
+    }}
+  >
+    <div className={`w-1/2 ${item.side === "left" ? "text-right pr-8" : "pl-8"}`}>
+      <h3 className="font-bold text-xl sm:text-2xl">{item.title}</h3>
+      <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg">{item.description}</p>
+    </div>
+
+    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-2 border-gray-300 dark:border-gray-600"></div>
+
+    <div className="w-1/2"></div>
+  </motion.div>
+))}
+
+  </div>
+</motion.section>
+
 
       </motion.section>
+      
 
       {/* Projects Section */}
       <motion.section

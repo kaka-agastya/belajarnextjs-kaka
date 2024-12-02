@@ -17,7 +17,7 @@ export default function Navbar() {
           className="text-2xl font-bold text-gray-800 dark:text-white"
           whileHover={{ scale: 1.1 }}
         >
-          <a href="#home">MyPortfolio</a>
+          <a href="#home">Kaka Agastya</a>
         </motion.div>
 
         {/* Navigation Links */}
