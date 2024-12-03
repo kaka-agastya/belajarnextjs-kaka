@@ -10,18 +10,28 @@ import Typewriter from "typewriter-effect";
 export default function Home() {
   const timelineItems = [
     {
-      title: "Food Server",
-      description: "KIA - Jun 2020 to Mar 2022",
+      title: "Belajar HTML CSS",
+      description: "Jun 2023 - Feb 2024",
       side: "left",
     },
     {
-      title: "Sales Associate",
-      description: "Maximus Exidis - May 2022 to May 2023",
+      title: "Belajar Python",
+      description: "Feb 2024 - Jun 2024",
       side: "right",
     },
     {
-      title: "Tutor",
-      description: "CFE CA - Dec 2023 to Present",
+      title: "Belajar Machine Learning",
+      description: "Aug 2024 - Sep 2024",
+      side: "left",
+    },
+    {
+      title: "Belajar C++",
+      description: "Aug 2024 - Oct 2024",
+      side: "right",
+    },
+    {
+      title: "Belajar Js, Next.js",
+      description: "Nov 2024 - Des 2024",
       side: "left",
     },
   ];
