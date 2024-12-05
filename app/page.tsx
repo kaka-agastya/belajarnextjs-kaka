@@ -35,6 +35,12 @@ export default function Home() {
       side: "left",
     },
   ];
+  const projectItems = [
+    { id: 1, title: 'Barunastra', description: 'A website about Barunastra' },
+    { id: 2, title: 'Portfolio', description: 'A website about personal portfolio' },
+    { id: 3, title: 'Barunastra', description: 'A website about Barunastra' },
+    { id: 4, title: 'Portfolio', description: 'A website about personal portfolio' },
+  ];
   return (
     <div className="min-h-screen p-8 sm:p-20 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white">
       {/* Home Section */}
@@ -152,15 +158,15 @@ export default function Home() {
       >
         <h2 className="text-3xl font-bold text-center mb-8">Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3].map((project) => (
+          {projectItems.map((project) => (
             <motion.div
-              key={project}
+              key={project.id}
               className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg"
               whileHover={{ scale: 1.05 }}
             >
-              <h3 className="text-xl font-bold mb-2">Project {project}</h3>
+              <h3 className="text-xl font-bold mb-2">Project {project.title}</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Brief description of Project {project}.
+                {project.description}.
               </p>
             </motion.div>
           ))}
