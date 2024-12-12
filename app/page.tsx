@@ -83,8 +83,10 @@ export default function Home() {
             Learn More
           </a>
         </motion.div>
+        
       </motion.section>
 
+      
       {/* About Section */}
       <motion.section
         id="about"
